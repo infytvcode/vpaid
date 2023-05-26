@@ -100,7 +100,7 @@ VpaidAd.prototype.renderSlot_ = function() {
   cxr.setAttribute("data-t-id", "2084");
   cxr.setAttribute("data-test", "true");
   cxr.setAttribute("data-ad-creative", "true");
-  document.body.appendChild(cxr);
+  this.slot_.appendChild(cxr);
 
   let scriptEle = document.createElement("script");
 
@@ -108,7 +108,7 @@ VpaidAd.prototype.renderSlot_ = function() {
   scriptEle.setAttribute("type", "text/javascript");
   scriptEle.setAttribute("async", true);
 
-  document.body.appendChild(scriptEle);
+  this.slot_.appendChild(scriptEle);
 
   // success event 
   scriptEle.addEventListener("load", () => {
