@@ -65,9 +65,10 @@ VpaidAd.prototype.initAd = function(
   this.attributes_['desiredBitrate'] = desiredBitrate;
 
   var data = JSON.parse(creativeData['AdParameters']);
-  this.publisher_id_ = data.overlays || [];
-  this.tag_id_ = data.videos || [];
-  this.log('initAd - publisher_id_' + publisher_id_ + 'tag_id_' + tag_id_);
+  this.log('data', data)
+  this.attributes_['publisher_id'] = data.publisher_id || 1094;
+  this.attributes_['tag_id'] = data.tag_id || 2084;
+  this.log('initAd - publisher_id_' + this.attributes_['publisher_id'] + 'tag_id_' + this.attributes_['tag_id']);
   this.log('initAd ' + width + 'x' + height +
     ' ' + viewMode + ' ' + desiredBitrate);
   this.renderSlot_();
