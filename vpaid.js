@@ -68,9 +68,7 @@ VpaidAd.prototype.initAd = function(
   this.log('data', data)
   this.attributes_['publisher_id'] = data.publisher_id || 1094;
   this.attributes_['tag_id'] = data.tag_id || 2084;
-  this.log('initAd - publisher_id_' + this.attributes_['publisher_id'] + 'tag_id_' + this.attributes_['tag_id']);
-  this.log('initAd ' + width + 'x' + height +
-    ' ' + viewMode + ' ' + desiredBitrate);
+  this.attributes_['gen_id'] = data.gen_id || "p_house_drogon";
   this.renderSlot_();
   // this.addButtonListeners_();
   // this.fillProperties_();
@@ -91,15 +89,16 @@ VpaidAd.prototype.renderSlot_ = function() {
     }
     document.body.appendChild(this.slot_);
   }
-  // this.slot_.innerHTML = '<div style="width: 300px;height: 600px;" id="gen_ext" data-id="p_house_drogon" data-ad="true" data-c-id="1094" data-t-id="2084" data-test="true" data-domain="terminaltrend.io" data-publisher-name="Terminal Trend" data-ad-creative="true"></div>';
+
   var cxr = document.createElement('div');
   cxr.setAttribute("id", "gen_ext");
-  cxr.setAttribute("data-id", "p_house_drogon");
+  cxr.setAttribute("data-id", this.attributes_['gen_id']);
   cxr.setAttribute("data-ad", "true");
-  cxr.setAttribute("data-c-id", "1094");
-  cxr.setAttribute("data-t-id", "2084");
+  cxr.setAttribute("data-c-id", this.attributes_['publisher_id']);
+  cxr.setAttribute("data-t-id", this.attributes_['tag_id']);
   cxr.setAttribute("data-test", "true");
   cxr.setAttribute("data-ad-creative", "true");
+  cxr.setAttribute("height", "100%");
   this.slot_.appendChild(cxr);
 
   let scriptEle = document.createElement("script");
