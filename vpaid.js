@@ -98,7 +98,7 @@ VpaidAd.prototype.renderSlot_ = function() {
   cxr.setAttribute("data-t-id", this.attributes_['tag_id']);
   cxr.setAttribute("data-test", "true");
   cxr.setAttribute("data-ad-creative", "true");
-  cxr.setAttribute("height", "100%");
+  cxr.style.color = "100%";
   this.slot_.appendChild(cxr);
 
   let scriptEle = document.createElement("script");
