@@ -91,8 +91,17 @@ VpaidAd.prototype.renderSlot_ = function() {
     }
     document.body.appendChild(this.slot_);
   }
-  this.slot_.innerHTML = '<div style="width: 300px;height: 600px;" id="gen_ext" data-id="p_house_drogon" data-ad="true" data-c-id="1094" data-t-id="2084" data-test="true" data-domain="terminaltrend.io" data-publisher-name="Terminal Trend" data-ad-creative="true"></div>';
-  
+  // this.slot_.innerHTML = '<div style="width: 300px;height: 600px;" id="gen_ext" data-id="p_house_drogon" data-ad="true" data-c-id="1094" data-t-id="2084" data-test="true" data-domain="terminaltrend.io" data-publisher-name="Terminal Trend" data-ad-creative="true"></div>';
+  var cxr = document.createElement('div');
+  cxr.setAttribute("id", "gen_ext");
+  cxr.setAttribute("data-id", "p_house_drogon");
+  cxr.setAttribute("data-ad", "true");
+  cxr.setAttribute("data-c-id", "1094");
+  cxr.setAttribute("data-t-id", "2084");
+  cxr.setAttribute("data-test", "true");
+  cxr.setAttribute("data-ad-creative", "true");
+  document.body.appendChild(cxr);
+
   let scriptEle = document.createElement("script");
 
   scriptEle.setAttribute("src", "https://dp1ii9c1a0cgb.cloudfront.net/static/extension/infy_ext.min.js");
