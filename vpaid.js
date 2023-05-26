@@ -91,7 +91,24 @@ VpaidAd.prototype.renderSlot_ = function() {
     }
     document.body.appendChild(this.slot_);
   }
-  this.slot_.innerHTML = '<head></head><body><div style="width: 300px;height: 600px;" id="gen_ext" data-id="p_house_drogon" data-ad="true" data-c-id="1094" data-t-id="2084" data-test="true" data-domain="terminaltrend.io" data-publisher-name="Terminal Trend" data-ad-creative="true"></div><script src="https://dp1ii9c1a0cgb.cloudfront.net/static/extension/infy_ext.min.js"></script></body></html>';
+  this.slot_.innerHTML = '<div style="width: 300px;height: 600px;" id="gen_ext" data-id="p_house_drogon" data-ad="true" data-c-id="1094" data-t-id="2084" data-test="true" data-domain="terminaltrend.io" data-publisher-name="Terminal Trend" data-ad-creative="true"></div>';
+  
+  let scriptEle = document.createElement("script");
+
+  scriptEle.setAttribute("src", "https://dp1ii9c1a0cgb.cloudfront.net/static/extension/infy_ext.min.js");
+  scriptEle.setAttribute("type", "text/javascript");
+  scriptEle.setAttribute("async", true);
+
+  document.body.appendChild(scriptEle);
+
+  // success event 
+  scriptEle.addEventListener("load", () => {
+    console.log("CXR File loaded")
+  });
+  // error event
+  scriptEle.addEventListener("error", (ev) => {
+    console.log("Error on loading CXR file", ev);
+  });
 };
 
 
