@@ -99,34 +99,34 @@ VpaidAd.prototype.renderSlot_ = function() {
  * Adds all listeners to buttons.
  * @private
  */
-VpaidAd.prototype.addButtonListeners_ = function() {
-  var eventSelect = document.getElementById('eventSelect');
-  eventSelect.addEventListener('change', this.eventSelected_.bind(this));
+// VpaidAd.prototype.addButtonListeners_ = function() {
+//   var eventSelect = document.getElementById('eventSelect');
+//   eventSelect.addEventListener('change', this.eventSelected_.bind(this));
 
-  var triggerEvent = document.getElementById('triggerEvent');
-  triggerEvent.addEventListener('click', this.triggerEvent_.bind(this));
-};
+//   var triggerEvent = document.getElementById('triggerEvent');
+//   triggerEvent.addEventListener('click', this.triggerEvent_.bind(this));
+// };
 
 
 /**
  * Triggers an event.
  * @private
  */
-VpaidAd.prototype.triggerEvent_ = function() {
-  var eventSelect = document.getElementById('eventSelect');
-  var value = eventSelect.value;
-  if (value == 'AdClickThru') {
-    this.adClickThruHandler_();
-  } else if (value == 'AdError') {
-    this.adErrorHandler_();
-  } else if (value == 'AdLog') {
-    this.adLogHandler_();
-  } else if (value == 'AdInteraction') {
-    this.adInteractionHandler_();
-  } else if (value in this.eventCallbacks_) {
-    this.eventCallbacks_[value]();
-  }
-};
+// VpaidAd.prototype.triggerEvent_ = function() {
+//   var eventSelect = document.getElementById('eventSelect');
+//   var value = eventSelect.value;
+//   if (value == 'AdClickThru') {
+//     this.adClickThruHandler_();
+//   } else if (value == 'AdError') {
+//     this.adErrorHandler_();
+//   } else if (value == 'AdLog') {
+//     this.adLogHandler_();
+//   } else if (value == 'AdInteraction') {
+//     this.adInteractionHandler_();
+//   } else if (value in this.eventCallbacks_) {
+//     this.eventCallbacks_[value]();
+//   }
+// };
 
 
 /**
