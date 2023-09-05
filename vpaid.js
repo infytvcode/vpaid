@@ -91,16 +91,19 @@ VpaidAd.prototype.renderSlot_ = function() {
   }
 
   var cxr = document.createElement('div');
-  cxr.setAttribute("class", "gen_ext");
-  cxr.setAttribute("data-tag-id", this.attributes_['gen_id']);
-  cxr.setAttribute("data-company-id", this.attributes_['publisher_id']);
+  cxr.setAttribute("id", "gen_ext");
+  cxr.setAttribute("data-id", this.attributes_['gen_id']);
+  cxr.setAttribute("data-ad", "true");
+  cxr.setAttribute("data-c-id", this.attributes_['publisher_id']);
+  cxr.setAttribute("data-t-id", this.attributes_['tag_id']);
+  cxr.setAttribute("data-test", "false");
   cxr.setAttribute("data-ad-creative", "true");
   cxr.style.height = "100%"
   this.slot_.appendChild(cxr);
 
   let scriptEle = document.createElement("script");
 
-  scriptEle.setAttribute("src", "https://media.begenuin.com/cxr/gen_ext.min.js");
+  scriptEle.setAttribute("src", "https://dp1ii9c1a0cgb.cloudfront.net/static/extension/infy_ext.min.js");
   scriptEle.setAttribute("type", "text/javascript");
   scriptEle.setAttribute("async", true);
 
